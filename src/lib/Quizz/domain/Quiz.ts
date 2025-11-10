@@ -53,7 +53,8 @@ export class Quiz {
     description: QuizDescription,
     ownerId: UserId,
   ): Quiz {
-    return new Quiz(id, ownerId, title, description, QuestionList.of([]));
+    // Correct argument order for the private constructor: (id, title, description, ownerId, questions...)
+    return new Quiz(id, title, description, ownerId, QuestionList.of([]));
   }
 
   public updateInfo(
